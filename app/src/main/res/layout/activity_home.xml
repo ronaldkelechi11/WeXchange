@@ -9,13 +9,13 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/primary"
         app:menu="@menu/bottom_navbar"
         app:itemTextColor="@drawable/navbar_selector"
         app:itemIconTint="@drawable/navbar_selector"
+        app:backgroundTint="@color/primary"
         app:itemIconSize="28dp"
         app:labelVisibilityMode="unlabeled"
-        app:itemRippleColor="@color/lightPrimary"
+        app:itemRippleColor="@color/darkPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
