@@ -13,6 +13,18 @@
         android:theme="@style/Theme.WeXchange"
         tools:targetApi="31">
         <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Starred"
+            android:exported="false" />
+        <activity
+            android:name=".Messages"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
             android:name=".Welcome"
             android:exported="true">
             <intent-filter>

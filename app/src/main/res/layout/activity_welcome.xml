@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="400dp"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,25 +47,26 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <androidx.cardview.widget.CardView
-        android:onClick="goToSignUp"
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_margin="10dp"
+        android:onClick="goToSignUp"
         app:cardBackgroundColor="@color/primary"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" >
+        app:layout_constraintStart_toStartOf="parent">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:text="Get Started"
             android:layout_gravity="center"
             android:fontFamily="@font/oswald"
-            />
+            android:text="Get Started"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
