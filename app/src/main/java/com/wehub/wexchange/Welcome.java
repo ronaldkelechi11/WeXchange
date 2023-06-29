@@ -18,7 +18,7 @@ public class Welcome extends AppCompatActivity {
 
     public void goToSignUp(View view) {
 //        Intent t = new Intent(getApplicationContext(), SignUp.class);//Original
-        Intent t = new Intent(getApplicationContext(), Home.class);
+        Intent t = new Intent(getApplicationContext(), SignUp.class);
         startActivity(t);
     }
 }
