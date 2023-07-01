@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".SignUp">
 
+<!-- name;
+    profilePic;
+    String password;
+    String telephone;
+    String address;
+    String about;-->
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -123,13 +129,34 @@
         <EditText
             android:id="@+id/signupEdittextAddress"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="70dp"
             android:background="@drawable/signup_editext_background"
             android:drawableStart="@drawable/address"
             android:drawablePadding="10dp"
             android:drawableTint="@color/cardview_dark_background"
             android:fontFamily="@font/oswald"
             android:hint="Address"
+            android:imeOptions="normal"
+            android:inputType="textPostalAddress"
+            android:maxLength="100"
+            android:padding="10dp"
+            android:singleLine="false"
+            android:textColor="@color/textColor"
+            android:textSize="20sp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <EditText
+            android:id="@+id/signupEdittextAbout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/signup_editext_background"
+            android:drawableStart="@drawable/about"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/cardview_dark_background"
+            android:fontFamily="@font/oswald"
+            android:hint="About"
             android:imeOptions="normal"
             android:inputType="textPostalAddress"
             android:maxLength="100"
