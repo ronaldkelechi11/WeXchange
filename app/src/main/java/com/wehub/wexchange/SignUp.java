@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.telephony.PhoneNumberFormattingTextWatcher;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -18,11 +21,6 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        telephoneEditText.addTextChangedListener(new PhoneNumberFormattingTextWatcher("NG"));
-
-    }
-
-    public void signup(View view) {
         //Initializing EditTexts
         nameEditText = findViewById(R.id.signupEdittextName);
         telephoneEditText = findViewById(R.id.signupEdittextTelephone);
@@ -30,12 +28,36 @@ public class SignUp extends AppCompatActivity {
         addressEditText = findViewById(R.id.signupEdittextAddress);
         aboutEditText = findViewById(R.id.signupEdittextAbout);
 
+        telephoneEditText.addTextChangedListener(new PhoneNumberFormattingTextWatcher("NG"));
+        passwordEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+               if(s.length() == 1){
+                   Toast.makeText(SignUp.this, R.string.password_remembrance_text, Toast.LENGTH_SHORT).show();
+               }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+    }
+
+    public void signup(View view) {
         //Creating String from the edittext
         String name = nameEditText.getText().toString().trim();
         String telephone = telephoneEditText.getText().toString();
         String password = passwordEditText.getText().toString().trim();
         String address = addressEditText.getText().toString();
         String about = aboutEditText.getText().toString();
+
+        //FrontEnd Validation
 
         HashMap<String, String> map = new HashMap<>();
         map.put("name", name);

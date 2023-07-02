@@ -6,7 +6,7 @@
     <color name="primary">#32C0C6</color>
     <color name="lightBlue">#03A9F4</color>
     <color name="darkPrimary">#3264D8</color>
-    <color name="textColor">#FD251B33</color>
+    <color name="textColor">@android:color/primary_text_dark</color>
     <color name="lightGrey">#E2E2FF</color>
     <color name="grey">#c4c4c4</color>
     <color name="red">#FF0000</color>
