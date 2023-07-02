@@ -38,5 +38,10 @@ public class SignUp extends AppCompatActivity {
         String about = aboutEditText.getText().toString();
 
         HashMap<String, String> map = new HashMap<>();
+        map.put("name", name);
+        map.put("telephone", telephone);
+        map.put("password", password);
+        map.put("address", address);
+        map.put("about", about);
     }
 }
