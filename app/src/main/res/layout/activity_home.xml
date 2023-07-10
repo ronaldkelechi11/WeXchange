@@ -40,6 +40,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
+        android:nestedScrollingEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -282,7 +283,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fashion Accessories"
+                    android:text="Sports"
                     android:layout_gravity="center_horizontal"
                     android:textSize="18sp"
                     android:textAlignment="center"
@@ -290,50 +291,14 @@
                     android:textColor="@color/textColor"
                     />
             </LinearLayout>
-            <LinearLayout
+            <View
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:src=""
-                    android:layout_gravity="center_horizontal"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/oswald"
-                    android:textColor="@color/textColor"
-                    />
-            </LinearLayout>
-            <LinearLayout
+                android:layout_height="match_parent"/>
+            <View
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:src=""
-                    android:layout_gravity="center_horizontal"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/oswald"
-                    android:textColor="@color/textColor"
-                    />
-            </LinearLayout>
+                android:layout_height="match_parent"/>
         </TableRow>
 
     </GridLayout>

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.HashMap;
+import java.util.regex.Matcher;
 
 public class SignUp extends AppCompatActivity {
 
@@ -64,11 +65,32 @@ public class SignUp extends AppCompatActivity {
             nameEditText.requestFocus();
             return;
         }
-        if(name.isEmpty()){
-            nameEditText.setError("Cannot be blank");
-            nameEditText.requestFocus();
+        if(telephone.isEmpty()){
+            telephoneEditText.setError("Cannot be blank");
+            telephoneEditText.requestFocus();
             return;
         }
+        if(password.isEmpty()){
+            passwordEditText.setError("Cannot be blank");
+            passwordEditText.requestFocus();
+            return;
+        }
+        if(password.length() < 8 ){
+            passwordEditText.setError("Should be greater than 8 characters");
+            passwordEditText.requestFocus();
+            return;
+        }
+        if(address.isEmpty()){
+            addressEditText.setError("Cannot be blank");
+            addressEditText.requestFocus();
+            return;
+        }
+        if(about.isEmpty()){
+            aboutEditText.setError("Cannot be blank");
+            aboutEditText.requestFocus();
+            return;
+        }
+
 
         HashMap<String, String> map = new HashMap<>();
         map.put("name", name);
