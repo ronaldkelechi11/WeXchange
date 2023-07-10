@@ -33,7 +33,7 @@
         android:padding="10dp"
         android:text="@string/signup_secondary_text"
         android:textAlignment="center"
-        android:textColor="@color/lightGrey"
+        android:textColor="@color/grey"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

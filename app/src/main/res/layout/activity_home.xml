@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="160dp"
         android:padding="10dp"
         app:cardBackgroundColor="@color/primary"
         app:contentPadding="10dp"
@@ -87,7 +87,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Furniture"
+                    android:text="Mobile Phones"
                     android:layout_gravity="center_horizontal"
                     android:textSize="18sp"
                     android:fontFamily="@font/oswald"
@@ -159,7 +159,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Animals"
+                    android:text="Animals &amp; pets"
                     android:layout_gravity="center_horizontal"
                     android:textSize="18sp"
                     android:fontFamily="@font/oswald"
@@ -184,6 +184,79 @@
                     android:text="Services"
                     android:layout_gravity="center_horizontal"
                     android:textSize="18sp"
+                    android:fontFamily="@font/oswald"
+                    android:textColor="@color/textColor"
+                    />
+            </LinearLayout>
+        </TableRow>
+        <TableRow
+            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:src="@drawable/user"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fashion Accessories"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/oswald"
+                    android:textColor="@color/textColor"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:src="@drawable/user"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Furniture"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/oswald"
+                    android:textColor="@color/textColor"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:src="@drawable/user"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Construction"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
                     android:fontFamily="@font/oswald"
                     android:textColor="@color/textColor"
                     />
