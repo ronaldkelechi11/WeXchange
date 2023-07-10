@@ -40,7 +40,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                if(s.length() == 1){
-                   Toast.makeText(SignUp.this, R.string.password_remembrance_text, Toast.LENGTH_SHORT).show();
+                   Toast.makeText(SignUp.this, R.string.password_remembrance_text, Toast.LENGTH_LONG).show();
                }
             }
 
