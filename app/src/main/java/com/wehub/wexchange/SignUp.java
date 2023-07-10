@@ -2,6 +2,7 @@ package com.wehub.wexchange;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.Editable;
@@ -58,6 +59,16 @@ public class SignUp extends AppCompatActivity {
         String about = aboutEditText.getText().toString();
 
         //FrontEnd Validation
+        if(name.isEmpty()){
+            nameEditText.setError("Cannot be blank");
+            nameEditText.requestFocus();
+            return;
+        }
+        if(name.isEmpty()){
+            nameEditText.setError("Cannot be blank");
+            nameEditText.requestFocus();
+            return;
+        }
 
         HashMap<String, String> map = new HashMap<>();
         map.put("name", name);
@@ -65,5 +76,13 @@ public class SignUp extends AppCompatActivity {
         map.put("password", password);
         map.put("address", address);
         map.put("about", about);
+
+        successfulSignup(); // :) Modularizing your App
+    }
+
+    private void successfulSignup() {
+        Intent ti = new Intent(getApplicationContext(), Home.class);
+        startActivity(ti);
+        finish();
     }
 }
