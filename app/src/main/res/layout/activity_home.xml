@@ -210,7 +210,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fashion Accessories"
+                    android:text="Housing"
                     android:layout_gravity="center_horizontal"
                     android:textSize="18sp"
                     android:textAlignment="center"
@@ -307,7 +307,8 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:backgroundTint="@color/primary"
+        app:itemActiveIndicatorStyle="@style/ShapeAppearance.Material3.NavigationBarView.ActiveIndicator"
+        app:itemBackground="@color/primary"
         app:itemIconSize="28dp"
         app:itemIconTint="@drawable/navbar_selector"
         app:itemRippleColor="@color/darkPrimary"
