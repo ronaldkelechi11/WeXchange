@@ -41,7 +41,6 @@
         app:itemActiveIndicatorStyle="@style/ShapeAppearance.Material3.NavigationBarView.ActiveIndicator"
         app:itemIconSize="28dp"
         app:itemIconTint="@drawable/navbar_selector"
-        app:itemRippleColor="@color/darkPrimary"
         app:itemTextColor="@color/black"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
