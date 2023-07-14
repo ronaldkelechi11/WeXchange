@@ -3,6 +3,7 @@ package com.wehub.wexchange;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.Editable;
@@ -11,12 +12,16 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.wehub.wexchange.managers.SharedPrefsInterface;
+
 import java.util.HashMap;
 import java.util.regex.Matcher;
 
 public class SignUp extends AppCompatActivity {
 
     EditText nameEditText, telephoneEditText, passwordEditText, addressEditText, aboutEditText;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +104,17 @@ public class SignUp extends AppCompatActivity {
         map.put("address", address);
         map.put("about", about);
 
-        successfulSignup(); // :) Modularizing your App
+
+        saveUserInfo(telephone, name);//Run to save info to SharedPrefs
+        successfulSignup(); // :) Run after successful signup
+    }
+
+    private void saveUserInfo(String userTelephone, String userName) {
+        sharedPreferences = getSharedPreferences(SharedPrefsInterface.SHARED_PREFS(), MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putString(SharedPrefsInterface.SHARED_PREFERENCE_USER_TELEPHONE(), userTelephone);
+        editor.putString(SharedPrefsInterface.SHARED_PREFERENCE_USER_NAME(), userName);
+        editor.apply();
     }
 
     private void successfulSignup() {
