@@ -1,28 +1,33 @@
 package com.wehub.wexchange.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Ads  implements Serializable {
-    String image;
+    int id;
     String title;
-    String price;
     String description;
-    String ownerName;
+    String price;
+    ArrayList<String> image;
+    String ownerId;
+    String category;
 
-    public Ads(String image, String title, String price, String description, String ownerName) {
-        this.image = image;
+    public Ads(int id, String title, String description, String price, ArrayList<String> image, String ownerId, String category) {
+        this.id = id;
         this.title = title;
-        this.price = price;
         this.description = description;
-        this.ownerName = ownerName;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
+        this.price = price;
         this.image = image;
+        this.ownerId = ownerId;
+        this.category = category;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -33,14 +38,6 @@ public class Ads  implements Serializable {
         this.title = title;
     }
 
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -49,11 +46,35 @@ public class Ads  implements Serializable {
         this.description = description;
     }
 
-    public String getOwnerName() {
-        return ownerName;
+    public String getPrice() {
+        return price;
     }
 
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public ArrayList<String> getImage() {
+        return image;
+    }
+
+    public void setImage(ArrayList<String> image) {
+        this.image = image;
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

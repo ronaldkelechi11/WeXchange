@@ -12,10 +12,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.wehub.wexchange.apiHelpers.HttpInterface;
 import com.wehub.wexchange.managers.SharedPrefsInterface;
 
 import java.util.HashMap;
 import java.util.regex.Matcher;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SignUp extends AppCompatActivity {
 
@@ -97,23 +102,44 @@ public class SignUp extends AppCompatActivity {
         }
 
 
-        HashMap<String, String> map = new HashMap<>();
-        map.put("name", name);
-        map.put("telephone", telephone);
-        map.put("password", password);
-        map.put("address", address);
-        map.put("about", about);
+        // set default user signup
+        if(name.equals("Default User")){
+            saveUserInfo(telephone, 1);
+            successfulSignup();
+        }
+        else{
+            HashMap<String, String> map = new HashMap<>();
+            map.put("name", name);
+            map.put("telephone", telephone);
+            map.put("password", password);
+            map.put("address", address);
+            map.put("about", about);
+            Call<Integer> call = HttpInterface.getInstance().getApi().executeSignup(map);
+            call.enqueue(new Callback<Integer>() {
+                @Override
+                public void onResponse(Call<Integer> call, Response<Integer> response) {
+                    if(response.code() == 200){
+                        saveUserInfo(telephone, 1);
+                        successfulSignup();
+                    }
+                    else if(response.code() == 400){
+                        Toast.makeText(SignUp.this, "User credentials already exist", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                @Override
+                public void onFailure(Call<Integer> call, Throwable t) {
+                    Toast.makeText(SignUp.this, "Server connection Error", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
 
-
-        saveUserInfo(telephone, name);//Run to save info to SharedPrefs
-        successfulSignup(); // :) Run after successful signup
     }
 
-    private void saveUserInfo(String userTelephone, String userName) {
+    private void saveUserInfo(String userTelephone, int userId) {
         sharedPreferences = getSharedPreferences(SharedPrefsInterface.SHARED_PREFS(), MODE_PRIVATE);
         editor = sharedPreferences.edit();
         editor.putString(SharedPrefsInterface.SHARED_PREFERENCE_USER_TELEPHONE(), userTelephone);
-        editor.putString(SharedPrefsInterface.SHARED_PREFERENCE_USER_NAME(), userName);
+        editor.putString(SharedPrefsInterface.SHARED_PREFERENCE_USER_ID(), String.valueOf(userId));
         editor.apply();
     }
 

@@ -9,7 +9,7 @@ import retrofit2.http.*;
 
 public interface RetrofitInterface {
     @POST("/signup")
-    Call<Void> executeSignup(@Body HashMap<String, String> map);
+    Call<Integer> executeSignup(@Body HashMap<String, String> map);
 
     @POST("/login")
     Call<User> executeLogin(@Body HashMap<String, String> map);

@@ -25,7 +25,7 @@ public class Welcome extends AppCompatActivity {
 
     public void checkForFirstLaunch(View view) {
         sharedPreferences = getSharedPreferences(SharedPrefsInterface.SHARED_PREFS(), MODE_PRIVATE);
-        String userNameTest = sharedPreferences.getString(SharedPrefsInterface.SHARED_PREFERENCE_USER_NAME(), "default");
+        String userNameTest = sharedPreferences.getString(SharedPrefsInterface.SHARED_PREFERENCE_USER_ID(), "");
         Log.d(TAG, "checkForFirstLaunch: "+ userNameTest);
         if(!userNameTest.isEmpty()){
             goToHomeScreen();
