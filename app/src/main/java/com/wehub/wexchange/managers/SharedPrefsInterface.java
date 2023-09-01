@@ -10,6 +10,9 @@ public class SharedPrefsInterface {
     public static String SHARED_PREFERENCE_USER_TELEPHONE (){
         return "userTelephone";
     };
+    public static String SHARED_PREFERENCE_USER_NAME (){
+        return "userName";
+    };
 
     public static String SHARED_PREFERENCE_USER_ID(){
         return "userId";

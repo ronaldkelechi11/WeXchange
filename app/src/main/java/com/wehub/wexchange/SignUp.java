@@ -104,7 +104,7 @@ public class SignUp extends AppCompatActivity {
 
         // set default user signup
         if(name.equals("Default User")){
-            saveUserInfo(telephone, 1);
+            saveUserInfo(telephone, name,1);
             successfulSignup();
         }
         else{
@@ -119,7 +119,7 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<Integer> call, Response<Integer> response) {
                     if(response.code() == 200){
-                        saveUserInfo(telephone, 1);
+                        saveUserInfo(telephone, name, 1);
                         successfulSignup();
                     }
                     else if(response.code() == 400){
@@ -135,10 +135,11 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-    private void saveUserInfo(String userTelephone, int userId) {
+    private void saveUserInfo(String userTelephone, String userName, int userId) {
         sharedPreferences = getSharedPreferences(SharedPrefsInterface.SHARED_PREFS(), MODE_PRIVATE);
         editor = sharedPreferences.edit();
         editor.putString(SharedPrefsInterface.SHARED_PREFERENCE_USER_TELEPHONE(), userTelephone);
+        editor.putString(SharedPrefsInterface.SHARED_PREFERENCE_USER_NAME(), userName);
         editor.putString(SharedPrefsInterface.SHARED_PREFERENCE_USER_ID(), String.valueOf(userId));
         editor.apply();
     }
